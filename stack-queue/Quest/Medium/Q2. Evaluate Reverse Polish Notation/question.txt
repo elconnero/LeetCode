@@ -33,3 +33,29 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = (0 + 17) + 5
 = 17 + 5
 = 22
+
+My error was in the division step of the RPN evaluation.
+
+I used:
+
+stack.append(int(left / right))
+
+I assumed this would always truncate toward zero, which is what the problem requires. However, in Python 2, dividing two integers performs floor division instead of true division. Floor division rounds down toward negative infinity, not toward zero.
+
+This causes incorrect results when negative numbers are involved.
+
+For example:
+
+6 / -132
+Correct (truncate toward zero) → 0
+Floor division → -1
+
+That -1 changes the rest of the stack calculations and leads to the wrong final answer.
+
+The issue is that left / right was already performing integer floor division before int() was applied, so int() was not fixing anything.
+
+The correct approach is to force true division first, then truncate toward zero:
+
+stack.append(int(float(left) / right))
+
+This ensures proper division behavior and matches the problem requirement.
