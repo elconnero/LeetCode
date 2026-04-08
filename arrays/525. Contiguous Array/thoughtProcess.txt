@@ -1,0 +1,10 @@
+
+Objective:
+contiguous subarray with an equal number of 0 and 1
+
+What I think I need to do:
+
+I need to:
+
+Come up with a system that tracks the numbers of 1's and 0's.
+I need to create a system 

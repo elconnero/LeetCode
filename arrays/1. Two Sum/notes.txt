@@ -1,0 +1,12 @@
+Start: num_map = {}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+i=0, num=2
+complement = 9 - 2 = 7
+7 in num_map? No
+num_map = {2: 0}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+i=1, num=7
+complement = 9 - 7 = 2
+2 in num_map? YES → return [num_map[2], 1] = [0, 1]
