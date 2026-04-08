@@ -1,0 +1,14 @@
+A prefix sum array is where each element stores the cumulative sum of all elements up to that index.
+
+Understanding it:
+Prefix Sum:
+
+You take an integer array and for each index you total what it is and what came before it. 
+So for array[3] = array[3] + array[2] + array[1] + array[0] so if you need to figure out the range from 3 - 1, you just minus array[0] from it. 
+
+
+Thought process:
+
+["NumArray", "sumRange", "sumRange", "sumRange"]
+
+[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
