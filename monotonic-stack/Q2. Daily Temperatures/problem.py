@@ -45,16 +45,17 @@
 # ---- ATTEMPT THREE ----
 class Solution(object):
     def dailyTemperatures(self, temperatures):
+        n = len(temperatures)
+        answer = [0] * n
+        stack = []
 
-        ans = []
-        for i in range(len(temperatures)):
-            for j in range(i + 1, len(temperatures)):  # CHANGE: start j at i+1, removes need for i < j check and the wasted iterations before i
-                if temperatures[i] < temperatures[j]:
-                    ans.append(j - i)
-                    break
-            else:
-                ans.append(0)
-        return ans
+        for i in range(n):
+            while stack and temperatures[i] > temperatures[stack[-1]]:
+                prev_idx = stack.pop()
+                answer[prev_idx] = i - prev_idx
+            stack.append(i)
+
+        return answer
 
 
 temp = Solution()
