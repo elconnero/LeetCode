@@ -10,7 +10,7 @@ class Solution(object):
 
         while start < last:
 
-            if numbers[start] + numbers [last] == target: return start+1, last+2
+            if numbers[start] + numbers [last] == target: return start+1, last+1
             elif numbers[start] + numbers [last] > target: last -= 1 
             elif numbers[start] + numbers [last] < target: start += 1
             else: break
