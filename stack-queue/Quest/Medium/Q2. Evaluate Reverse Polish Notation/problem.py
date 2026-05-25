@@ -43,7 +43,7 @@ class Solution(object):
         operands = ["+","-","*","/"] 
 
         for token in tokens:
-            token = token.replace('\u2013', '-').replace('\u2014', '-')
+            token = token.replace('\u2013', '-').replace('\u2014', '-') # Normalize Unicode dashes (en dash, em dash) to ASCII hyphens
             if token not in operands:
                 stack.append(int(token))
             else:

@@ -15,7 +15,7 @@ class Solution:
         def inOrder(node):
             if not node: return
             inOrder(node.left)
-            inOrder(node.root)
+            res.append(node.val)  # ✅
             inOrder(node.right)
 
         inOrder(root)
