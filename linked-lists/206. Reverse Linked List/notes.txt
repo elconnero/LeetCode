@@ -1,0 +1,32 @@
+Can you show me how the data moves for this please?
+
+3:09 PM
+Sure! Let's use 1 -> 2 -> 3 -> None:
+
+Setup:
+
+curr = 1 -> 2 -> 3 -> None
+prev = None
+Iteration 1:
+
+python
+pholder = curr.next  # pholder = node(2)
+curr.next = prev     # node(1).next = None,   list is now: 1 -> None
+prev = curr          # prev = node(1)
+curr = pholder       # curr = node(2)
+# state: prev = 1 -> None
+#        curr = 2 -> 3 -> None
+Iteration 2:
+
+python
+pholder = curr.next  # pholder = node(3)
+curr.next = prev     # node(2).next = node(1),   list is now: 2 -> 1 -> None
+prev = curr          # prev = node(2)
+curr = pholder       # curr = node(3)
+# state: prev = 2 -> 1 -> None
+#        curr = 3 -> None
+Loop exits because curr.next is None. But notice 3 never got flipped! So after the loop you still need to:
+
+python
+curr.next = prev  # flip the last node:  3 -> 2 -> 1 -> None
+return curr       # curr is now the new head!
