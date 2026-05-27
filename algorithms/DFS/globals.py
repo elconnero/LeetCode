@@ -1,0 +1,12 @@
+# Define the decision tree as a dictionary
+tree = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F', 'G'],
+    'D': ['H', 'I'],
+    'E': ['J', 'K'],
+    'F': ['L', 'M'],
+    'G': ['N', 'O'],
+    'H': [], 'I': [], 'J': [], 'K': [],
+    'L': [], 'M': [], 'N': [], 'O': []
+}
