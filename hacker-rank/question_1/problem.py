@@ -17,17 +17,29 @@ import sys
 #  2. STRING str2
 #
 
-def getRemovableIndices(str1, str2):
+# What I did
+# def getRemovableIndices(str1, str2):
     
-    for i, char in enumerate(str1):
+#     for i, char in enumerate(str1):
         
-        if char == str2[i]: continue
-        else: 
-            str1 = str1[:i] + str1[i+1:]
-            break
+#         if char == str2[i]: continue
+#         else: 
+#             str1 = str1[:i] + str1[i+1:]
+#             break
 
-    if str1 == str2: return str1
-    else: return [-1]
+#     if str1 == str2: return str1
+#     else: return [-1]
+
+def getRemovableIndices(str1, str2):
+    result = []
+
+    for i in range(len(str1)):
+        # Try removing character at index i
+        modified = str1[:i] + str1[i+1:]
+        if modified == str2:
+            result.append(i)
+
+    return result if result else [-1]
 
 def main():
     print(getRemovableIndices("abdgggda", "abdggda"))  # expected [3, 4, 5]
