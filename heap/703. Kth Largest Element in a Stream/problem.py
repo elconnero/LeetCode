@@ -19,3 +19,8 @@ class KthLargest:
 # Your KthLargest object will be instantiated and called as such:
 # obj = KthLargest(k, nums)
 # param_1 = obj.add(val)
+
+obj = KthLargest(3, [4, 5, 8, 2])
+print(obj.add(3))   # expected 4
+print(obj.add(10))  # expected 5
+print(obj.add(1))   # expected 5

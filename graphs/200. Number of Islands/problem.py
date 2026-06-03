@@ -21,7 +21,7 @@ class Solution:
                 for dr, dc in directions:
                     r, c = row + dr, col + dc   # calculate neighbor cell coordinates
 
-                    if (r in range(rows) and    # neighbor is inside grid vertically
+                    if (r in range(row) and    # neighbor is inside grid vertically
                         c in range(col) and     # neighbor is inside grid horizontally
                         grid[r][c] == "1" and   # neighbor is land not water
                         (r,c) not in visted):   # neighbor hasn't been visited yet
