@@ -30,3 +30,8 @@ Loop exits because curr.next is None. But notice 3 never got flipped! So after t
 python
 curr.next = prev  # flip the last node:  3 -> 2 -> 1 -> None
 return curr       # curr is now the new head!
+
+
+
+General patterns:
+Sliding window
