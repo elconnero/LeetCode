@@ -1,15 +1,27 @@
+# class Solution:
+#     def minimumDifference(self, nums: List[int], k: int) -> int:
+        
+#         if k == 1: return 0
+        
+#         diff = 0
+#         nums = sorted(nums)
+#         for num in range(len(nums)-k):
+#             window = 0
+#             for elements in k: window += nums[num+elements]
+#             diff = min(diff, window)
+                
 class Solution:
     def minimumDifference(self, nums: List[int], k: int) -> int:
         
         if k == 1: return 0
         
-        diff = 0
+        diff = float('inf')
         nums = sorted(nums)
-        for num in range(len(nums)-k):
-            window = 0
-            for elements in k: window += nums[num+elements]
+        for num in range(len(nums)-k+1):
+            window = nums[num+k-1] - nums[num]
             diff = min(diff, window)
-                
+
+        return diff
 
 
 sol = Solution()
